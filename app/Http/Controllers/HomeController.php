@@ -20,17 +20,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $visitors = Visitor::all();
-        $allVisitsCount = $visitors->count();
-        $visitorsPerEndPoint =  $visitors->groupBy('end_point');
+        //$visitors = Visitor::all();
+        //$allVisitsCount = $visitors->count();
+        //$visitorsPerEndPoint =  $visitors->groupBy('end_point');
 
-        $totalCids = isset($visitorsPerEndPoint['/cid10']) ? $visitorsPerEndPoint['/cid10']->count() : 0;
-        $home = isset($visitorsPerEndPoint['/']) ? $visitorsPerEndPoint['/']->count() : 0;
+        //$totalCids = isset($visitorsPerEndPoint['/cid10']) ? $visitorsPerEndPoint['/cid10']->count() : 0;
+        //$home = isset($visitorsPerEndPoint['/']) ? $visitorsPerEndPoint['/']->count() : 0;
 
         $visits = [
-            'home' => $home,
-            'total_cids' => $totalCids,
-            'cids' => ($allVisitsCount - ($home +  $totalCids)),
+            'home' => 0,
+            'total_cids' => 0,
+            'cids' => (0 - (0 +  0)),
         ];
         $visits['total'] = array_sum(array_values($visits));
 
